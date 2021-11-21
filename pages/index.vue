@@ -260,7 +260,8 @@ export default {
 
   .introMsg{
     font-size:150%;
-    font-weight: 500;
+    font-weight: 400;
     color:#ECEFF1;
+    -webkit-text-stroke: 0.5px #333;
   }
 </style>
