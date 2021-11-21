@@ -97,7 +97,6 @@ export default {
       ],
       right: true,
       rightDrawer: false,
-      minSync:false, 
     }
   },
 
