@@ -1,6 +1,10 @@
 <template>
   <section class="post">
     <h1>About</h1>
+    <div  v-html="about.about"></div>
+
+
+    <h2>Author</h2>
     <v-img
       v-bind:src="about.prof.url"
       class="my-3"
@@ -9,8 +13,7 @@
     >
     </v-img>
 
-    <h2>{{ about.author }}</h2>
-
+    <h3>{{ about.author }}</h3>
     <div  v-html="about.desc"></div>
 
     <div class="sns">

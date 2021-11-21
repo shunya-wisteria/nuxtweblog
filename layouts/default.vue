@@ -3,7 +3,7 @@
     <v-app-bar app style="background-color:#ffffff;">
       <v-app-bar-nav-icon @click="drawer=true" v-if="!mini"></v-app-bar-nav-icon>
       <v-toolbar-title>
-        <span class="headline text-uppercase"><nuxt-link to="/" style="color:rgba(0, 0, 0, 0.87);border-bottom:none;">{{ pageInfo.title }}</nuxt-link></span>
+        <span class="headline"><nuxt-link to="/" style="color:rgba(0, 0, 0, 0.87);border-bottom:none;">{{ pageInfo.title }}</nuxt-link></span>
         <span class="font-weight-light subTitle">{{ pageInfo.subTitle }}</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -32,7 +32,6 @@
       :clipped="clipped"
 
       :expand-on-hover="mini"
-      :mini-variant.sync="minSync"
       :permanent="mini"
       app
     >
@@ -185,6 +184,13 @@ export default {
     font-weight: normal;
     text-align: center;
     margin : 20px 0px;
+  }
+  
+  h3{
+    color: #444;
+    font-size: 20px;
+    font-weight: normal;
+    margin : 10px 0px;
   }
 
   .subTitle{
