@@ -191,7 +191,7 @@ export default {
     font-weight: normal;
     margin : 10px 0px;
   }
-
+  
   .subTitle{
     font-size:80%; 
     margin-left:15px;

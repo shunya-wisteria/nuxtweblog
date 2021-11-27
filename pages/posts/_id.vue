@@ -36,7 +36,7 @@
 
     <img v-bind:src="post.eyecatch == null ? '':post.eyecatch.url" style="margin-top:5px;" v-if="post.eyecatch != null">
 
-    <div v-html="post.body" style="margin-top:30px"></div>
+    <div v-html="post.body" style="margin-top:30px" class="post"></div>
 
     <v-breadcrumbs :items="breadcrumbs" style="padding:30px 5px 30px 5px;">
     </v-breadcrumbs>
@@ -122,4 +122,38 @@ export default {
   .postInfo {
     margin : 10px 0px 10px 0px;
   }
+
+  .post{
+    line-height: 180%;
+  }
+
+  .post blockquote{
+    border: 2px solid #dcdcdc;
+    border-radius: 2px;
+    padding: 20px 20px;
+    margin: 20px 10px;
+  }
+
+  .post li{
+    list-style-type : circle;
+  }
+
+  .post pre{
+    background-color:#f1f1f1;
+    border-radius: 2px;
+    border: solid 1px #d5d5d5;
+    line-height: 130%;
+
+    width: 95%;
+    max-width: 800px;
+    overflow: auto;
+
+    padding: 0.3rem 0.8rem;
+    margin: 20px 0px 10px 0px;
+  }
+  .theme--light.v-application code{
+    background-color: #f1f1f1;
+    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+  }
+  
 </style>

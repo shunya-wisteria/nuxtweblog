@@ -10,7 +10,7 @@ const { SITE_TITLE } = process.env;
 const { META_DESCRIPTION } = process.env;
 const { META_OG_URL } = process.env;
 const { META_OG_IMG } = process.env;
-
+const { META_TWITTER_ID } = process.env;
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -35,6 +35,8 @@ export default {
       { hid: 'og:title', property: 'og:title', content: process.env.SITE_TITLE },
       { hid: 'og:description', property: 'og:description', content: process.env.META_DESCRIPTION },
       { hid: 'og:image', property: 'og:image', content: process.env.META_OG_IMG },
+      { hid: 'twitter:card', property: 'twitter:card', content: 'summary' },
+      { hid: 'twitter:site', property: 'twitter:site', content: process.env.META_TWITTER_ID }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -104,7 +106,7 @@ export default {
   },
 
   env: {
-    API_KEY, CMS_PAGE_LIMIT, CMS_API_ENDPOINT, SITE_TITLE, META_DESCRIPTION, META_OG_URL, META_OG_IMG
+    API_KEY, CMS_PAGE_LIMIT, CMS_API_ENDPOINT, SITE_TITLE, META_DESCRIPTION, META_OG_URL, META_OG_IMG, META_TWITTER_ID
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

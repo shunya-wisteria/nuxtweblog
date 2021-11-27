@@ -40,7 +40,7 @@
 
                 <v-img
                   v-if="media"
-                  height="200px"
+                  height="180px"
                   v-bind:src="item.eyecatch == null ? '/noimage.jpg':item.eyecatch.url"
                   style="border:1px solid #EEEEEE;"
                 >
