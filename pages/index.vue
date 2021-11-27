@@ -222,11 +222,11 @@ export default {
     {
       scrollTo(0, 0)
       this.pageInput = Number(this.$route.query.page)
-      if(this.$route.query.page == null)
+      if(this.$route.query.page == null || this.$route.query.page < 1)
       {
         this.pageInput = 1
       }
-      this.maxPage = this.items.length / process.env.CMS_PAGE_LIMIT
+      this.maxPage = Math.ceil(this.items.length / process.env.CMS_PAGE_LIMIT)
       if(this.maxPage < this.pageInput)
       {
         this.pageInput = this.maxPage
@@ -238,7 +238,10 @@ export default {
       this.posts = []
       for(let i = startPos; i < endPos; i++)
       {
-        this.posts.push(this.items[i])
+        if(this.items[i] != null)
+        {
+          this.posts.push(this.items[i])
+        }
       }
     },
     onNav()

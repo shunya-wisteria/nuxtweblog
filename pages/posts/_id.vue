@@ -34,7 +34,9 @@
       </v-row>
     </v-container>
 
-    <img v-bind:src="post.eyecatch == null ? '':post.eyecatch.url" style="margin-top:5px;" v-if="post.eyecatch != null">
+    <div style="width:90%;max-width: 800px; margin:0 auto; margin-top:5px;" v-if="post.eyecatch != null">
+      <img v-bind:src="post.eyecatch == null ? '':post.eyecatch.url" v-if="post.eyecatch != null" style="width:100%;">
+    </div>
 
     <div v-html="post.body" style="margin-top:30px" class="post"></div>
 
@@ -124,7 +126,23 @@ export default {
   }
 
   .post{
+    font-family: 'Open Sans', Segoe UI, "メイリオ", Meiryo, sans-serif;
+    color: #737373;
+    width:90%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: block;
+    font-size:100%;
     line-height: 180%;
+  }
+  .post img {
+    width:100%;
+    max-width: 800px; 
+    border:1px solid #DDDDDD;
+    margin-top:10px;
+    filter: drop-shadow(5px 5px 5px #BBB);
   }
 
   .post blockquote{

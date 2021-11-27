@@ -39,7 +39,7 @@ export default {
       { hid: 'twitter:site', property: 'twitter:site', content: process.env.META_TWITTER_ID }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       { rel: 'stylesheet', type: 'text/css', href:'https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css'},
       { rel: 'stylesheet', type: 'text/css', href:'https://fonts.googleapis.com/css?family=Open+Sans'},
       { rel: 'stylesheet', type: 'text/css', href:'https://fonts.googleapis.com/earlyaccess/notosansjapanese.css'},

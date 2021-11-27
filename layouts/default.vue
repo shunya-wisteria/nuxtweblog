@@ -145,24 +145,7 @@ export default {
     color: #dcdcdc;
     border-bottom: 1px solid #dcdcdc;
   }
-
-  .post{
-    font-family: 'Open Sans', Segoe UI, "メイリオ", Meiryo, sans-serif;
-    color: #737373;
-    width:90%;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    display: block;
-    font-size:100%;
-  }
-  .post img {
-    width:95%; 
-    border:1px solid #DDDDDD;
-    margin-top:10px;
-    filter: drop-shadow(5px 5px 5px #BBB);
-  }
+  
   .v-chip{
     margin:5px 5px;
     font-size: 80%;
