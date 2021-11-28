@@ -97,58 +97,5 @@ export default {
 }
 </script>
 
-<style>
-  .postInfo {
-    margin : 10px 0px 10px 0px;
-  }
-
-  .post{
-    font-family: 'Open Sans', Segoe UI, "メイリオ", Meiryo, sans-serif;
-    color: #737373;
-    width:90%;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    display: block;
-    font-size:100%;
-    line-height: 180%;
-  }
-  .post img {
-    width:100%;
-    max-width: 800px; 
-    border:1px solid #DDDDDD;
-    margin-top:10px;
-    filter: drop-shadow(5px 5px 5px #BBB);
-  }
-
-  .post blockquote{
-    border: 2px solid #dcdcdc;
-    border-radius: 2px;
-    padding: 20px 20px;
-    margin: 20px 10px;
-  }
-
-  .post li{
-    list-style-type : circle;
-  }
-
-  .post pre{
-    background-color:#f1f1f1;
-    border-radius: 2px;
-    border: solid 1px #d5d5d5;
-    line-height: 130%;
-
-    width: 95%;
-    max-width: 800px;
-    overflow: auto;
-
-    padding: 0.3rem 0.8rem;
-    margin: 20px 0px 10px 0px;
-  }
-  .theme--light.v-application code{
-    background-color: #f1f1f1;
-    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
-  }
-  
+<style>  
 </style>

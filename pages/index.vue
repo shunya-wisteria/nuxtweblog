@@ -254,13 +254,6 @@ export default {
 </script>
 
 <style scoped>
-  .postTitle{
-    font-size:120%;
-    font-weight: 400;
-    line-height: 130%;
-    color: #444;
-  }
-
   .introMsg{
     font-size:150%;
     font-weight: 400;
