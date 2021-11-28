@@ -93,6 +93,11 @@ export default {
           icon: 'mdi-tag-outline',
           title: 'Tags',
           to: '/tags'
+        },
+        {
+          icon: 'mdi-at',
+          title: 'Contact',
+          to: '/contact'
         }
       ],
       right: true,
