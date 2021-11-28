@@ -20,7 +20,7 @@ export default {
   },
 
   async mounted() {
-    const { data } = await this.$store.dispatch('restcall/RestGet', {url:process.env.CMS_API_ENDPOINT + "/api/v1/posts/" + this.$route.params.id + "?draftKey=" + this.$route.query.draftKey, header:{"X-MICROCMS-API-KEY" : process.env.API_KEY}});
+    const { data } = await this.$store.dispatch('restcall/RestGet', {url:process.env.CMS_API_ENDPOINT + "/api/v1/posts/" + this.$route.query.id + "?draftKey=" + this.$route.query.draftKey, header:{"X-MICROCMS-API-KEY" : process.env.API_KEY}});
     this.post = data
   },
 
