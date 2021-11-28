@@ -12,18 +12,16 @@ export default {
 
   data() {
     return {
+      post : {}
     };
   },
 
   computed:{
   },
 
-  async asyncData(context) {
-    const { data } = await context.store.dispatch('restcall/RestGet', {url:process.env.CMS_API_ENDPOINT + "/api/v1/posts/" + context.params.id, header:{"X-MICROCMS-API-KEY" : process.env.API_KEY}});
-    
-    return {
-      post: data
-    };
+  async mounted() {
+    const { data } = await this.$store.dispatch('restcall/RestGet', {url:process.env.CMS_API_ENDPOINT + "/api/v1/posts/" + this.$route.params.id + "?draftKey=" + this.$route.query.draftKey, header:{"X-MICROCMS-API-KEY" : process.env.API_KEY}});
+    this.post = data
   },
 
   head(){
