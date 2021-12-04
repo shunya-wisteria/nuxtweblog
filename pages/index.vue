@@ -41,7 +41,9 @@
           <v-col
             cols=12
           >
-            <router-link v-bind:to="'/posts/' + pageInfo.pickupEntry.id">
+
+
+          <router-link v-bind:to="'/posts/' + pageInfo.pickupEntry.id">
             <v-hover
               v-slot:default="{ hover }"
               open-delay=1
@@ -49,28 +51,45 @@
               :disabled="disabled"
               :value="value"
             >
-              <v-card
+              <v-card            
                 class="mx-auto"
                 :elevation="hover ? 12 : 2"
-                height="300px"
+                style="padding:10px;"
               >
-                <v-list-item three-line>
-                  <v-list-item-content style="margin-right:10px">
-                    <v-list-item-title class="headline mb-1">{{pageInfo.pickupEntry.title}}</v-list-item-title>
-                    <v-list-item-subtitle>{{pageInfo.pickupEntry.abstract}}</v-list-item-subtitle>
-                  </v-list-item-content>
-                  <v-list-item-content>
-                    <v-img
-                      v-if="media"
-                      class="white--text"
-                      height="270px"
-                      position="center top"
-                      v-bind:src="pageInfo.pickupEntry.eyecatch.url"
-                      style="border:1px solid #EEEEEE;"
+
+                <v-container>
+                  <v-row
+                    align="center"
+                    justify="start"
+                  >
+                    <v-col
+                      xs=12
+                      sm=6
+                      md=6
+                      lg=6
+                      xl=6
                     >
-                    </v-img>
-                  </v-list-item-content>
-                </v-list-item>
+                      <div style="height:80px">
+                        <v-card-title class="headline mb-1">{{pageInfo.pickupEntry.title}}</v-card-title>
+                      </div>
+                      <v-card-text>{{ pageInfo.pickupEntry.abstract }}</v-card-text>
+                    </v-col>
+                    <v-col
+                      xs=12
+                      sm=6
+                      md=6
+                      lg=6
+                      xl=6
+                    >
+                      <v-img
+                        v-if="media"
+                        v-bind:src="pageInfo.pickupEntry.eyecatch.url"
+                        style="border
+                        :1px solid #EEEEEE;"
+                      />
+                    </v-col>
+                  </v-row>
+                </v-container>
               </v-card>
             </v-hover>
             </router-link>

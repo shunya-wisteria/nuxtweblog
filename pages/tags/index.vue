@@ -17,7 +17,7 @@
             label
           >
             <v-avatar left>
-              <v-icon light>mdi-tag-outline </v-icon>
+              <v-icon light style="padding-top:3px;">mdi-tag-outline </v-icon>
             </v-avatar>
             {{t.name}}
           </v-chip>
