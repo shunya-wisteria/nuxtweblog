@@ -20,7 +20,7 @@
       <v-col
         class="text-center"
         cols="12"
-        style="color: #737373;"
+        style="color: #555555;"
       >
         &copy; {{ new Date().getFullYear() }} {{ pageInfo.author }}
       </v-col>

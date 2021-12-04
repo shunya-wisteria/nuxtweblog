@@ -167,7 +167,7 @@
             style="margin-top:20px;"
           >
             <p>
-              <nuxt-link to="/posts?page=2" class="more" style="font-size:120%;">MORE</nuxt-link>
+              <nuxt-link to="/posts?page=2" class="more" style="font-size:120%;">Read More Posts</nuxt-link>
             </p>
           </v-col>
         </v-row>
