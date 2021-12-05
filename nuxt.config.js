@@ -155,5 +155,6 @@ export default {
         return values.join().split(",");
       });
     },
+    fallback: true
   },
 }
