@@ -84,8 +84,7 @@
                       <v-img
                         v-if="media"
                         v-bind:src="pageInfo.pickupEntry.eyecatch.url"
-                        style="border
-                        :1px solid #EEEEEE;"
+                        style="border:1px solid #EEEEEE; max-height:350px;"
                       />
                     </v-col>
                   </v-row>

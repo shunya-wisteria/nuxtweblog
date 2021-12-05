@@ -1,60 +1,13 @@
 <template>
   <section>
+    <h1>{{ tag }}</h1>
     <v-layout
       column
       justify-center
       align-center
     >
-      <h1>{{ tag }}</h1>
+      <PostIndex v-bind:posts="posts" />
       <v-container>
-        <v-row
-          justify-center
-          align-center
-          class="grey lighten-5"
-        >
-          <v-col
-            md=4
-            lg=3
-            xl=2
-            v-for="(item,index) in posts"
-            :key="index"
-          >
-            <nuxt-link :to="{name:'posts-id', params:{id:item.id}}">
-            <v-hover
-              v-slot:default="{ hover }"
-              open-delay=2
-              close-delay=2
-              :disabled="disabled"
-              :value="value"
-            >
-              <v-card            
-                class="mx-auto"
-                :elevation="hover ? 12 : 2"
-                :flat="flat"
-                :loading="loading"
-                :outlined="outlined"
-                :raised="raised"
-                :width="width"
-                :height="height"
-              >
-
-                <v-img
-                  v-if="media"
-                  height="180px"
-                  v-bind:src="item.eyecatch == null ? '/noimage.jpg':item.eyecatch.url"
-                  style="border:1px solid #EEEEEE;"
-                >
-                </v-img>
-                <div style="height:60px">
-                  <v-card-title class="postTitle">{{item.title}}</v-card-title>
-                </div>
-                <v-card-text>{{ item.abstract }}</v-card-text>
-              </v-card>
-            </v-hover>
-            </nuxt-link>
-          </v-col>
-        </v-row>
-
         <v-row
             align="center"
             justigy="center"
@@ -78,32 +31,18 @@
 
 
 <script>
+import PostIndex from '@/components/PostIndex'
+
 export default {
+  components:{
+    PostIndex
+  },
+
   data() {
     return {
       posts : [],
       pageInput : 0,
       maxPage : 0,
-
-      flat: false,
-      media: true,
-      loading: false,
-      actions: true,
-      outlined: false,
-      elevation: undefined,
-      raised: false,
-      width: 320,
-      height: 400,
-      dialog : false,
-
-
-      disabled:false,
-      value:false,
-
-      model: 0,
-      showArrows: true,
-      hideDelimiters: false,
-      cycle: true,
     };
   },
   async asyncData(context) {
@@ -166,9 +105,4 @@ export default {
 </script>
 
 <style scoped>
-  .introMsg{
-    font-size:150%;
-    font-weight: 500;
-    color:#ECEFF1;
-  }
 </style>
