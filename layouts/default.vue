@@ -273,13 +273,6 @@ export default {
     font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
   }
   
-  .postTitle{
-    font-size:120%;
-    font-weight: 400;
-    line-height: 130%;
-    color: #444;
-  }
-
   .v-footer
   {
     font-family: "Roboto", 'Open Sans', Segoe UI, "メイリオ", Meiryo, sans-serif;

@@ -27,10 +27,9 @@
                 style="border: 1px solid #eeeeee"
               >
               </v-img>
-              <div style="height: 60px">
-                <v-card-title class="postTitle">{{ item.title }}</v-card-title>
-              </div>
-              <v-card-text>{{ item.abstract }}</v-card-text>
+              <v-card-title class="postTitle">{{ item.title }}</v-card-title>
+              <v-card-text class="postAbstract">{{ item.abstract }}</v-card-text>
+              <v-card-text class="postFotter">{{ new Date(item.createdAt).getFullYear() }}.{{ new Date(item.createdAt).getMonth()+1 }}.{{ new Date(item.createdAt).getDate() }}</v-card-text>
             </v-card>
           </v-hover>
         </nuxt-link>
@@ -57,6 +56,26 @@ export default {
       disabled:false,
       value:false,
     }
-  }
+  },
 };
 </script>
+<style scoped>
+  .postTitle{
+    font-size:120%;
+    font-weight: 400;
+    line-height: 150%;
+    color: #444;
+    height: 80px;
+    padding: 10px 16px;
+  }
+  .postAbstract
+  {
+    height:100px;
+    padding: 0px 16px 5px 16px;
+  }
+  .postFotter
+  {
+    height: 40px;
+    padding:0px 16px 5px 16px;
+  }
+</style>
