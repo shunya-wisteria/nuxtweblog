@@ -113,9 +113,6 @@ export default {
       id: data.attribs.id,
       name: data.name
     }));
-
-    console.log(JSON.stringify(this.toc))
-
   }
 }
 </script>
