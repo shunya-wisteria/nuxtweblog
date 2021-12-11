@@ -122,8 +122,9 @@ export default {
     border: 2px solid #dcdcdc;
     border-radius: 2px;
     padding: 15px 20px;
-    margin: 20px 10px;
-    width:60%
+    margin: 20px 8px;
+    width:95%;
+    max-width:450px;
 }
 .toc{
   list-style-type:none;
