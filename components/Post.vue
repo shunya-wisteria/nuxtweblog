@@ -38,6 +38,15 @@
       <img v-bind:src="post.eyecatch == null ? '':post.eyecatch.url" v-if="post.eyecatch != null" style="width:100%;">
     </div>
 
+    <div class="post" v-if="post.toc">
+      <ul class="tocs blue-grey lighten-5">
+        <span style="font-weight:600; font-size:120%;">目次</span>
+        <li v-for="item in toc" :key="item.id" :class="'toc toc_'+item.name">
+            <nuxt-link v-scroll-to="'#' + item.id" to>{{item.text}}</nuxt-link>
+        </li>
+      </ul>
+    </div>
+
     <div v-html="post.body" style="margin-top:30px" class="post"></div>
 
     <v-breadcrumbs :items="breadcrumbs" style="padding:30px 5px 30px 5px;">
@@ -53,6 +62,8 @@
 </template>
 
 <script>
+import cheerio      from 'cheerio';
+
 export default {
   name : "Post",
   props: ["post"],
@@ -75,7 +86,8 @@ export default {
           disabled: true,
           href: ""
         },    
-      ]
+      ],
+      toc :{}
     };
   },
 
@@ -93,9 +105,37 @@ export default {
   },
   mounted(){
     this.breadcrumbs[2].text = this.post.title
+
+    const $ = cheerio.load(this.post.body);
+    const headings = $('h2, h3').toArray();
+    this.toc = headings.map(data => ({
+      text: data.children[0].data,
+      id: data.attribs.id,
+      name: data.name
+    }));
+
+    console.log(JSON.stringify(this.toc))
+
   }
 }
 </script>
 
-<style>  
+<style scoped>
+.tocs{
+    border: 2px solid #dcdcdc;
+    border-radius: 2px;
+    padding: 15px 20px;
+    margin: 20px 10px;
+    width:60%
+}
+.toc{
+  list-style-type:none;
+  line-height:200%;
+}
+.toc_h2{
+  margin-left:5px;
+}
+.toc_h3{
+  margin-left:15px;
+}
 </style>

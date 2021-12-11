@@ -55,6 +55,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/vue-scrollto'} 
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -151,7 +152,7 @@ export default {
         }
       );
 
-      return Promise.all([posts,categories]).then(values => {
+      return Promise.all([posts,categories,tags]).then(values => {
         return values.join().split(",");
       });
     },
