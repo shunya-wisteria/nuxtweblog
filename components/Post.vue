@@ -70,24 +70,6 @@ export default {
 
   data() {
     return {
-      breadcrumbs : [
-        {
-          text: "Home",
-          disabled: false,
-          href: "/"
-        },
-        {
-          text: "Posts",
-          disabled: false,
-          href: "/posts"
-        },
-        {
-          text: "",
-          disabled: true,
-          href: ""
-        },    
-      ],
-      toc :{}
     };
   },
 
@@ -101,18 +83,39 @@ export default {
       let min   = dt.getMinutes()
       
       return year + "." + month + "." + date + " " + hour + ":" + min
+    },
+    toc(){
+      const $ = cheerio.load(this.post.body);
+      const headings = $('h2, h3').toArray();
+      return headings.map(data => ({
+        text: data.children[0].data,
+        id: data.attribs.id,
+        name: data.name
+      }));
+    },
+    breadcrumbs()
+    {
+      return [
+        {
+          text: "Home",
+          disabled: false,
+          href: "/"
+        },
+        {
+          text: "Posts",
+          disabled: false,
+          href: "/posts"
+        },
+        {
+          text: this.post.title,
+          disabled: true,
+          href: ""
+        },    
+      ]
+      
     }
   },
   mounted(){
-    this.breadcrumbs[2].text = this.post.title
-
-    const $ = cheerio.load(this.post.body);
-    const headings = $('h2, h3').toArray();
-    this.toc = headings.map(data => ({
-      text: data.children[0].data,
-      id: data.attribs.id,
-      name: data.name
-    }));
   }
 }
 </script>
