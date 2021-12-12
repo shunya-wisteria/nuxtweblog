@@ -136,12 +136,7 @@
 </template>
 
 <script>
-import PostIndex from '@/components/PostIndex'
 export default {
-  components:{
-    PostIndex
-  },
-
   data() {
     return {
       posts : [],
