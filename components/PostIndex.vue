@@ -29,7 +29,7 @@
               </v-img>
               <v-card-title class="postTitle">{{ item.title }}</v-card-title>
               <v-card-text class="postAbstract">{{ item.abstract }}</v-card-text>
-              <v-card-text class="postFotter">{{ new Date(item.createdAt).getFullYear() }}.{{ new Date(item.createdAt).getMonth()+1 }}.{{ new Date(item.createdAt).getDate() }}</v-card-text>
+              <v-card-text class="postFotter">{{ new Date(item.publishedAt).getFullYear() }}.{{ new Date(item.publishedAt).getMonth()+1 }}.{{ new Date(item.publishedAt).getDate() }}</v-card-text>
             </v-card>
           </v-hover>
         </nuxt-link>
