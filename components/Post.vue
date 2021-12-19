@@ -12,7 +12,7 @@
           justigy="center"
           style="padding-left:0px;"
         >
-          <span style="font-size:90%;">{{ createdAt }}</span>
+          <span style="font-size:90%;">{{ publishedAt }}</span>
         </v-col>
         <v-col
           cols=8
@@ -74,8 +74,8 @@ export default {
   },
 
   computed:{
-    createdAt(){
-      let dt = new Date(this.post.createdAt)
+    publishedAt(){
+      let dt = new Date(this.post.publishedAt)
       let year  = dt.getFullYear()
       let month = dt.getMonth()+1
       let date  = dt.getDate()
