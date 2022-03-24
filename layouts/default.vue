@@ -259,6 +259,7 @@ export default {
     background-color:#f1f1f1;
     border-radius: 2px;
     border: solid 1px #d5d5d5;
+    filter: drop-shadow(2px 2px 4px #bbbbbb);
     line-height: 130%;
 
     width: 95%;

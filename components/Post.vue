@@ -124,6 +124,7 @@ export default {
 .tocs{
     border: 2px solid #dcdcdc;
     border-radius: 2px;
+    filter: drop-shadow(3px 3px 3px #bbbbbb);
     padding: 15px 20px;
     margin: 20px 8px;
     width:95%;
