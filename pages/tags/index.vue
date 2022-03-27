@@ -32,7 +32,7 @@
 <script>
 export default {
   async asyncData(context) {
-    const { data } = await context.store.dispatch('restcall/RestGet', {url:process.env.CMS_API_ENDPOINT + "/api/v1/tags", header:{"X-MICROCMS-API-KEY" : process.env.API_KEY}});
+    const { data } = await context.store.dispatch('restcall/RestGet', {url:process.env.CMS_API_ENDPOINT + "/api/v1/tags?limit=100", header:{"X-MICROCMS-API-KEY" : process.env.API_KEY}});
 
     return {
       tags: data.contents

@@ -117,7 +117,7 @@ export default {
   generate: {
     routes() {
       const posts = axios
-        .get(process.env.CMS_API_ENDPOINT + "/api/v1/posts", {
+        .get(process.env.CMS_API_ENDPOINT + "/api/v1/posts?limit=200", {
           headers: {"X-MICROCMS-API-KEY" : process.env.API_KEY}
         })
         .then(res => {
@@ -141,7 +141,7 @@ export default {
 
       const tags = axios.get
       (
-        process.env.CMS_API_ENDPOINT + "/api/v1/tags",
+        process.env.CMS_API_ENDPOINT + "/api/v1/tags?limit=100",
         {
           headers: {"X-MICROCMS-API-KEY" : process.env.API_KEY}
         }
