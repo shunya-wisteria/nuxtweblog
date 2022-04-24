@@ -48,7 +48,7 @@ export default {
   },
   
   async asyncData({ store }) {
-    const { data } = await store.dispatch('restcall/RestGet', {url:process.env.CMS_API_ENDPOINT + "/api/v1/posts?limit=200", header:{"X-MICROCMS-API-KEY" : process.env.API_KEY}});
+    const { data } = await store.dispatch('restcall/RestGet', {url:process.env.CMS_API_ENDPOINT + "/api/v1/posts?limit=500", header:{"X-MICROCMS-API-KEY" : process.env.API_KEY}});
 
     return {
       items: data.contents
