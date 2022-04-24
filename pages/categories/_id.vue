@@ -40,7 +40,7 @@ export default {
     };
   },
   async asyncData(context) {
-    const { data } = await context.store.dispatch('restcall/RestGet', {url:process.env.CMS_API_ENDPOINT + "/api/v1/posts?filters=category[equals]" + context.params.id, header:{"X-MICROCMS-API-KEY" : process.env.API_KEY}});
+    const { data } = await context.store.dispatch('restcall/RestGet', {url:process.env.CMS_API_ENDPOINT + "/api/v1/posts?limit=500&filters=category[equals]" + context.params.id, header:{"X-MICROCMS-API-KEY" : process.env.API_KEY}});
 
     return {
       items: data.contents,
