@@ -121,6 +121,9 @@ export default {
 </script>
 
 <style scoped>
+h1{
+  text-transform: none;
+}
 .tocs{
     border: 2px solid #dcdcdc;
     border-radius: 2px;
