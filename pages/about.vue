@@ -16,12 +16,16 @@
     <h3>{{ about.author }}</h3>
     <div  v-html="about.desc"></div>
 
-    <div class="sns">
-      <p v-if="about.githubUrl != null"><a v-bind:href="about.githubUrl" target="_blank"><v-icon light>mdi-github</v-icon>{{about.githubText}}</a></p>
-      <p v-if="about.twitterUrl != null"><a v-bind:href="about.twitterUrl" target="_blank"><v-icon light>mdi-twitter</v-icon>{{about.twitterText}}</a></p>
-      <p v-if="about.facebookUrl != null"><a v-bind:href="about.facebookUrl" target="_blank"><v-icon light>mdi-facebook</v-icon>{{about.facebookText}}</a></p>
-      <p v-if="about.tumblrUrl != null"><a v-bind:href="about.tumblrUrl" target="_blank"><v-icon light>mdi-alpha-t-box-outline</v-icon>{{about.tumblrText}}</a></p>
-      <p v-if="about.instagramUrl != null"><a v-bind:href="about.instagramUrl" target="_blank"><v-icon light>mdi-instagram</v-icon>{{about.instagramText}}</a></p>
+    <div class ="sns">
+      <p v-for="sns in about.sns">
+        <a v-bind:href="sns.url" target="_blank">
+          <v-icon light>
+            {{ sns.mdicon }}
+          </v-icon>
+          {{ sns.text }}
+        </a>
+        
+      </p>
     </div>
 
     <v-breadcrumbs :items="items" style="padding:30px 5px 30px 5px;"></v-breadcrumbs>
@@ -64,12 +68,8 @@ export default {
 
 <style scoped>
   * >>> .sns{
-    width:180px;
+    width:300px;
     margin:0 auto;
     margin-top:50px;
-  }
-
-  * >>> .v-icon{
-    margin-right:5px
   }
 </style>
