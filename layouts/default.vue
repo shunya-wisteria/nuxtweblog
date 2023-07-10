@@ -66,6 +66,9 @@ export default {
     this.$store.dispatch("SetPortalEyecatch", data.portalEyecatch.url)
     this.$store.dispatch("SetPortalEyecatchCom", data.portalEyecatchCom)
     this.$store.dispatch("SetPickupEntry", data.pickupEntry)
+    this.$store.dispatch("SetTopLink1", data.topLink1)
+    this.$store.dispatch("SetTopLink2", data.topLink2)
+    this.$store.dispatch("SetTopLink3", data.topLink3)
   },
 
   data () {

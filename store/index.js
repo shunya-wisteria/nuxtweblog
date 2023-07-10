@@ -5,7 +5,10 @@ export const state = () => ({
     author : "",
     portalEyecatch : "",
     portalEyecatchCom : "",
-    pickupEntry : null
+    pickupEntry : null,
+    topLink1 : null,
+    topLink2: null,
+    topLink3: null
   }
 })
 
@@ -41,6 +44,18 @@ export const mutations = {
   setPickupEntry(state, payload)
   {
     state.pageInfo.pickupEntry = payload
+  },
+  setTopLink1(state, payload)
+  {
+    state.pageInfo.topLink1 = payload
+  },
+  setTopLink2(state, payload)
+  {
+    state.pageInfo.topLink2 = payload
+  },
+  setTopLink3(state, payload)
+  {
+    state.pageInfo.topLink3 = payload
   }
 }
 
@@ -69,5 +84,17 @@ export const actions = {
   SetPickupEntry({commit}, pickup)
   {
     commit('setPickupEntry', pickup)
-  }
+  },
+  SetTopLink1({commit}, toplink)
+  {
+    commit('setTopLink1', toplink)
+  },
+  SetTopLink2({commit}, toplink)
+  {
+    commit('setTopLink2', toplink)
+  },
+  SetTopLink3({commit}, toplink)
+  {
+    commit('setTopLink3', toplink)
+  },
 }

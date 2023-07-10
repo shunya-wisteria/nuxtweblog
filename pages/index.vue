@@ -20,6 +20,104 @@
       align="center"
     >
       <v-container>
+      
+      <!-- TOP LINK-->
+        <v-row
+          align="center"
+          justigy="center"
+          class="topLink"
+        >
+          <v-col
+            cols=12
+            class="topLinkTitle"
+          >
+            <p class="text-uppercase secCaption topLinkTitleText">Quick Menu</p>
+          </v-col>
+          <v-col
+            cols="4"
+            class="topLinkColLeft"
+          >
+            <a :href="pageInfo.topLink1.url" :target="pageInfo.topLink1.external ? '_blank' : '_self'">
+              <v-hover
+                v-slot:default="{ hover }"
+                open-delay=1
+                close-delay=1
+                :disabled="disabled"
+                :value="value"
+              >
+                <v-card            
+                  class="mx-auto topLinkCard"
+                  :elevation="hover ? 12 : 2"
+                >
+                  <v-img
+                    :src="pageInfo.topLink1.photo.url"
+                    class="align-end"
+                    height="150px"
+                    cover
+                  >
+                  <v-card-title class="white--text topLinkText" v-text="pageInfo.topLink1.title" />
+                  </v-img>
+                </v-card>
+              </v-hover>
+            </a>
+          </v-col>
+          <v-col
+            cols="4"
+            class="topLinkColCenter"
+          >
+          <a :href="pageInfo.topLink2.url" :target="pageInfo.topLink2.external ? '_blank' : '_self'">
+            <v-hover
+              v-slot:default="{ hover }"
+              open-delay=1
+              close-delay=1
+              :disabled="disabled"
+              :value="value"
+            >
+              <v-card            
+                  class="mx-auto topLinkCard"
+                  :elevation="hover ? 12 : 2"
+                >
+                  <v-img
+                    :src="pageInfo.topLink2.photo.url"
+                    class="align-end"
+                    height="150px"
+                    cover
+                  >
+                  <v-card-title class="white--text topLinkText" v-text="pageInfo.topLink2.title" />
+                  </v-img>
+                </v-card>
+              </v-hover>
+            </a>
+          </v-col>
+          <v-col
+            cols="4"
+            class="topLinkColRight"
+          >
+            <a :href="pageInfo.topLink3.url" :target="pageInfo.topLink3.external ? '_blank' : '_self'">
+              <v-hover
+                v-slot:default="{ hover }"
+                open-delay=1
+                close-delay=1
+                :disabled="disabled"
+                :value="value"
+              >
+              <v-card            
+                  class="mx-auto topLinkCard"
+                  :elevation="hover ? 12 : 2"
+                >
+                  <v-img
+                    :src="pageInfo.topLink3.photo.url"
+                    class="align-end"
+                    height="150px"
+                    cover
+                  >
+                    <v-card-title class="white--text topLinkText" v-text="pageInfo.topLink3.title" />
+                  </v-img>
+                </v-card>
+              </v-hover>
+            </a>
+          </v-col>
+        </v-row>
 
       <!-- PickUp -->
         <v-row
@@ -219,5 +317,37 @@ export default {
     font-weight: 400;
     color:#ECEFF1;
     -webkit-text-stroke: 0.5px #333;
+    text-stroke: 0.5px #333;
+  }
+
+  .topLink{
+    margin-top: 20px;
+    margin-bottom:20px;
+  }
+
+  .topLinkText{
+    font-size:100%;
+    -webkit-text-stroke: 0.1px #888888;
+    text-stroke: 0.1px #888888;
+  }
+  .topLinkTitleText{
+    margin-top:0px;
+  }
+
+  .topLinkTitle{
+    padding-top:0px;
+    padding-bottom: 0px;
+  }
+
+  .topLinkColRight{
+    padding-left: 2.5px;
+  }
+  .topLinkColCenter{
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+  }
+
+  .topLinkColLeft{
+    padding-right: 2.5px;
   }
 </style>
