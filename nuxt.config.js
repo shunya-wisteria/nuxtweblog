@@ -12,6 +12,7 @@ const { META_OG_URL } = process.env;
 const { META_OG_IMG } = process.env;
 const { META_TWITTER_ID } = process.env;
 const { GAID } = process.env;
+const { PHOTOLOG_URL } = process.env
 
 const GAcode = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GAID}');`
 
@@ -125,7 +126,7 @@ export default {
   },
 
   env: {
-    API_KEY, CMS_PAGE_LIMIT, CMS_API_ENDPOINT, SITE_TITLE, META_DESCRIPTION, META_OG_URL, META_OG_IMG, META_TWITTER_ID, GAID
+    API_KEY, CMS_PAGE_LIMIT, CMS_API_ENDPOINT, SITE_TITLE, META_DESCRIPTION, META_OG_URL, META_OG_IMG, META_TWITTER_ID, GAID, PHOTOLOG_URL
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

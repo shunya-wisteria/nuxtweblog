@@ -98,6 +98,11 @@ export default {
           to: '/tags'
         },
         {
+          icon: 'mdi-map-marker-check-outline',
+          title: 'PhotoMAP',
+          to: '/photomap'
+        },
+        {
           icon: 'mdi-at',
           title: 'Contact',
           to: '/contact'
