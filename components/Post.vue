@@ -116,6 +116,7 @@ export default {
     }
   },
   mounted(){
+    window.iframely && iframely.load();
   }
 }
 </script>

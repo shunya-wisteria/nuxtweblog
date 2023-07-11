@@ -46,6 +46,9 @@ export default {
       { rel: 'stylesheet', type: 'text/css', href:'https://fonts.googleapis.com/css?family=Carme'},
       { rel: 'stylesheet', type: 'text/css', href:'https://fonts.googleapis.com/css?family=Didact+Gothic'},
       { rel: 'stylesheet', type: 'text/css', href:'https://use.fontawesome.com/releases/v5.6.3/css/all.css'},
+    ],
+    script:[
+      { src: '//cdn.iframe.ly/embed.js', async: true}
     ]
   },
 
