@@ -11,6 +11,9 @@ const { META_DESCRIPTION } = process.env;
 const { META_OG_URL } = process.env;
 const { META_OG_IMG } = process.env;
 const { META_TWITTER_ID } = process.env;
+const { GAID } = process.env;
+
+const GAcode = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GAID}');`
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -48,8 +51,20 @@ export default {
       { rel: 'stylesheet', type: 'text/css', href:'https://use.fontawesome.com/releases/v5.6.3/css/all.css'},
     ],
     script:[
-      { src: '//cdn.iframe.ly/embed.js', async: true}
-    ]
+      { src: '//cdn.iframe.ly/embed.js', async: true},
+      {
+        hid: 'GAsrc',
+        src: 'https://www.googletagmanager.com/gtag/js?id=' + GAID
+      },
+      {
+        hid: 'GAcode',
+        innerHTML: GAcode
+      }
+    ],
+    __dangerouslyDisableSanitizersByTagID: {
+      'GAsrc': ['innerHTML'],
+      'GAcode': ['innerHTML']
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -110,7 +125,7 @@ export default {
   },
 
   env: {
-    API_KEY, CMS_PAGE_LIMIT, CMS_API_ENDPOINT, SITE_TITLE, META_DESCRIPTION, META_OG_URL, META_OG_IMG, META_TWITTER_ID
+    API_KEY, CMS_PAGE_LIMIT, CMS_API_ENDPOINT, SITE_TITLE, META_DESCRIPTION, META_OG_URL, META_OG_IMG, META_TWITTER_ID, GAID
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
