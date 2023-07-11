@@ -241,6 +241,7 @@ export default {
   }
   .post img {
     width:100%;
+    height: auto;
     max-width: 800px; 
     border:1px solid #DDDDDD;
     margin-top:10px;
