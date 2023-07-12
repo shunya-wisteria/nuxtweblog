@@ -7,9 +7,8 @@
     <h2>Author</h2>
     <v-img
       v-bind:src="about.prof.url"
-      class="my-3"
+      class="my-3 profile"
       contain
-      height="150"
     >
     </v-img>
 
@@ -71,5 +70,12 @@ export default {
     width:300px;
     margin:0 auto;
     margin-top:50px;
+  }
+
+  .profile{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    margin: 0 auto;
   }
 </style>
