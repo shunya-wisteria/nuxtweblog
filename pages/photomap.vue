@@ -27,7 +27,7 @@ export default {
           href: "/"
         },
         {
-          text: "PhotoLog",
+          text: "PhotoMap",
           disabled: true
         }
       ]
