@@ -80,7 +80,7 @@ export default {
       let month = dt.getMonth()+1
       let date  = dt.getDate()
       let hour  = dt.getHours()
-      let min   = dt.getMinutes()
+      let min   = dt.getMinutes().toString().padStart(2, '0')
       
       return year + "." + month + "." + date + " " + hour + ":" + min
     },
