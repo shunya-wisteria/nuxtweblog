@@ -13,6 +13,7 @@ const { META_OG_IMG } = process.env;
 const { META_TWITTER_ID } = process.env;
 const { GAID } = process.env;
 const { PHOTOLOG_URL } = process.env
+const { HOST_NAME } = process.env
 
 const GAcode = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GAID}');`
 
@@ -90,6 +91,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/sitemap',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -125,8 +127,58 @@ export default {
     }
   },
 
+  sitemap: {
+    hostname: process.env.HOST_NAME,
+    path : "/sitemap.xml",
+    exclude: [
+      "/draft",
+      "/contact/success"
+    ],
+    routes() {
+      const posts = axios
+        .get(process.env.CMS_API_ENDPOINT + "/api/v1/posts?limit=500", {
+          headers: {"X-MICROCMS-API-KEY" : process.env.API_KEY}
+        })
+        .then(res => {
+          return res.data.contents.map(posts => {
+            return "/posts/" + posts.id;
+          });
+        });
+      
+      const categories = axios.get
+      (
+        process.env.CMS_API_ENDPOINT + "/api/v1/categories?limit=100",
+        {
+          headers: {"X-MICROCMS-API-KEY" : process.env.API_KEY}
+        }
+      )
+      .then(res => 
+        {
+          return res.data.contents.map(categories => {return "/categories/" + categories.id;})
+        }
+      );
+
+      const tags = axios.get
+      (
+        process.env.CMS_API_ENDPOINT + "/api/v1/tags?limit=100",
+        {
+          headers: {"X-MICROCMS-API-KEY" : process.env.API_KEY}
+        }
+      )
+      .then(res => 
+        {
+          return res.data.contents.map(tags => {return "/tags/" + tags.id;})
+        }
+      );
+
+      return Promise.all([posts,categories,tags]).then(values => {
+        return values.join().split(",");
+      })
+    }
+  },
+
   env: {
-    API_KEY, CMS_PAGE_LIMIT, CMS_API_ENDPOINT, SITE_TITLE, META_DESCRIPTION, META_OG_URL, META_OG_IMG, META_TWITTER_ID, GAID, PHOTOLOG_URL
+    API_KEY, CMS_PAGE_LIMIT, CMS_API_ENDPOINT, SITE_TITLE, META_DESCRIPTION, META_OG_URL, META_OG_IMG, META_TWITTER_ID, GAID, PHOTOLOG_URL, HOST_NAME
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
