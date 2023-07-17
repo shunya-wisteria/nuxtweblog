@@ -178,14 +178,14 @@ export default {
     font-size: 24px;
     font-weight: normal;
     text-align: center;
-    margin : 20px 0px;
+    margin : 30px 0px 20px 0px;
   }
   
   h3{
     color: #444;
     font-size: 20px;
     font-weight: normal;
-    margin : 10px 0px;
+    margin : 30px 0px 10px 0px;
   }
   
   .subTitle{
