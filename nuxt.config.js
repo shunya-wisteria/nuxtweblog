@@ -14,6 +14,12 @@ const { META_TWITTER_ID } = process.env;
 const { GAID } = process.env;
 const { PHOTOLOG_URL } = process.env
 const { HOST_NAME } = process.env
+const { FORM_URL } = process.env
+const { FORM_NAME_FIELD } = process.env
+const { FORM_EMAIL_FIELD} = process.env
+const { FORM_COMMENT_FIELD } = process.env
+const { FORM_ENTRYID_FIELD } = process.env
+const { COM_FORM_ENABLED } = process.env
 
 const GAcode = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GAID}');`
 
@@ -178,7 +184,7 @@ export default {
   },
 
   env: {
-    API_KEY, CMS_PAGE_LIMIT, CMS_API_ENDPOINT, SITE_TITLE, META_DESCRIPTION, META_OG_URL, META_OG_IMG, META_TWITTER_ID, GAID, PHOTOLOG_URL, HOST_NAME
+    API_KEY, CMS_PAGE_LIMIT, CMS_API_ENDPOINT, SITE_TITLE, META_DESCRIPTION, META_OG_URL, META_OG_IMG, META_TWITTER_ID, GAID, PHOTOLOG_URL, HOST_NAME, FORM_URL, FORM_NAME_FIELD, FORM_EMAIL_FIELD, FORM_COMMENT_FIELD, FORM_ENTRYID_FIELD, COM_FORM_ENABLED
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
