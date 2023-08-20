@@ -316,8 +316,9 @@ export default {
     font-size:150%;
     font-weight: 400;
     color:#ECEFF1;
-    -webkit-text-stroke: 0.5px #333;
-    text-stroke: 0.5px #333;
+    background-color: #8888;
+    padding: 2px 15px;
+    border-radius: 3px;
   }
 
   .topLink{
