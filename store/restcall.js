@@ -70,6 +70,31 @@ export const actions = {
         retObj["status"]  = "404"
         return retObj
       }
+    },
+
+    async GetFile({commit}, args)
+    {
+      let retObj = {}
+      
+      try{
+        let response = await axios.get(args.url, {responseType: "blob"})
+        if(response.status == 200)
+        {
+          retObj["status"]  = response.status
+          retObj["file"]  = response.data
+          return retObj
+        }
+        else
+        {
+          retObj["status"]  = response.status
+          return retObj
+        }
+      }
+      catch(error)
+      {
+        retObj["status"]  = "404"
+        return retObj
+      }
     }
 
 }

@@ -1,15 +1,26 @@
 <template>
-  <Post v-bind:post="post" />
+  <div>
+    <Post v-bind:post="post" />
+    <Comment v-bind:entryId="post.id" v-if="commentEnabled"/>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      commentEnabled : false
     };
   },
 
   computed:{
+  },
+
+  mounted(){
+    if(process.env.COM_FORM_ENABLED == 1)
+    {
+      this.commentEnabled = true
+    }
   },
 
   async asyncData(context) {
