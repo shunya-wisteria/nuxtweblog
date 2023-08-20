@@ -1,18 +1,11 @@
 <template>
   <section class="post">
-    <h2>Comments</h2>
+    <p class="comTitle">Comments</p>
     <v-text-field
       label="お名前(必須)"
       required
       color="blue-grey lighten-1"
       v-model="input.name"
-    ></v-text-field>
-    <v-text-field
-      label="メールアドレス(必須)"
-      required
-      color="blue-grey lighten-1"
-      type="email"
-      v-model="input.email"
     ></v-text-field>
     <v-textarea
       label="コメント(必須)"
@@ -34,7 +27,6 @@ export default{
     return {
       input:{
         name: "",
-        email : "",
         comment : ""
       }
     }
@@ -48,11 +40,6 @@ export default{
         window.alert("お名前 を入力してください。")
         return
       }
-      else if(this.input.email == "" || this.input.email == null)
-      {
-        window.alert("メールアドレス を入力してください。")
-        return
-      }
       else if(this.input.comment == "" || this.input.comment == null)
       {
         window.alert("コメント を入力してください。")
@@ -61,7 +48,7 @@ export default{
 
       const submitParams = new FormData()
       submitParams.append(process.env.FORM_NAME_FIELD, this.input.name)
-      submitParams.append(process.env.FORM_EMAIL_FIELD, this.input.email)
+      submitParams.append(process.env.FORM_EMAIL_FIELD, "xxx@example.com")
       submitParams.append(process.env.FORM_COMMENT_FIELD, this.input.comment)
       submitParams.append(process.env.FORM_ENTRYID_FIELD, this.entryId)
 
@@ -80,3 +67,10 @@ export default{
   }
 }
 </script>
+<style scoped>
+.comTitle
+{
+  font-size: 120%;
+  color:#444;
+}
+</style>
