@@ -4,6 +4,7 @@
       height="350px"
       position="center center"
       v-bind:src="pageInfo.portalEyecatch"
+      rel="preload"
     >
       <v-row
         class="fill-height"
