@@ -169,9 +169,9 @@
                       xl=6
                     >
                       <div style="height:80px">
-                        <v-card-title class="headline mb-1">{{pageInfo.pickupEntry.title}}</v-card-title>
+                        <v-card-title class="headline mb-1 pickupweight">{{pageInfo.pickupEntry.title}}</v-card-title>
                       </div>
-                      <v-card-text>{{ pageInfo.pickupEntry.abstract }}</v-card-text>
+                      <v-card-text class="pickupweight">{{ pageInfo.pickupEntry.abstract }}</v-card-text>
                     </v-col>
                     <v-col
                       xs=12
@@ -315,7 +315,7 @@ export default {
 <style scoped>
   .introMsg{
     font-size:150%;
-    font-weight: 400;
+    font-weight: 300;
     color:#ECEFF1;
     background-color: #8888;
     padding: 2px 15px;
@@ -351,5 +351,9 @@ export default {
 
   .topLinkColLeft{
     padding-right: 2.5px;
+  }
+  
+  .pickupweight{
+    font-weight: 300;
   }
 </style>

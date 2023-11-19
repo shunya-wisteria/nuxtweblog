@@ -62,7 +62,7 @@ export default {
 <style scoped>
   .postTitle{
     font-size:120%;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 150%;
     color: #444;
     height: 80px;
@@ -72,6 +72,7 @@ export default {
   {
     height:100px;
     padding: 0px 16px 5px 16px;
+    font-weight: 300;
   }
   .postFotter
   {
